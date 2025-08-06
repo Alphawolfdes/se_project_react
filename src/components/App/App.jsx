@@ -20,8 +20,8 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
 
   const handleCardClick = (card) => {
-    setActiveModal("preview");
-    setSelectedCard(card);
+    setSelectedCard(card); // Save the clicked card's data
+    setActiveModal("preview"); // Open the preview modal (or whatever modal you use)
   };
 
   const handleAddButtonClick = () => {
@@ -50,10 +50,7 @@ function App() {
           handleAddButtonClick={handleAddButtonClick}
           weatherData={weatherData}
         />
-        <Main
-          weatherData={weatherData}
-          handleAddButtonClick={handleAddButtonClick}
-        />
+        <Main weatherData={weatherData} handleCardClick={handleCardClick} />
       </div>
       <Footer />
       <ModalWithForm

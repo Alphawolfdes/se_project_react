@@ -1,8 +1,10 @@
-export const getWeather = ({ latitude, longitude, APIkey }) => {
+import { APIkey } from "./constants";
+
+export const getWeather = ({ latitude, longitude }) => {
   return fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${e0bbf42834184533d41eba2b56b8d84b}`
+    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`
   ).then((response) => {
-    if (!response.ok) {
+    if (response.ok) {
       return response.json();
     } else {
       return Promise.reject(`Error: ${response.status}`);
@@ -26,9 +28,9 @@ const isDay = ({ sunrise, sunset }, now) => {
 };
 
 const getWeatherType = (temp) => {
-  if (temperature >= 86) {
+  if (temp >= 86) {
     return "hot";
-  } else if (temperature >= 66) {
+  } else if (temp >= 66) {
     return "warm";
   } else {
     return "cold";
