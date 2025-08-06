@@ -8,6 +8,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import "../Footer/Footer.css";
+import Footer from "../Footer/Footer";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -54,6 +55,7 @@ function App() {
           handleAddButtonClick={handleAddButtonClick}
         />
       </div>
+      <Footer />
       <ModalWithForm
         buttonText="Add garment"
         title="New garment"
