@@ -1,0 +1,40 @@
+.footer {
+  width: 100%;
+  padding: 32px 40px;
+  background: #f7f7f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #222;
+  border-top: 1px solid #eaeaea;
+  box-sizing: border-box;
+}
+
+.footer__copyright {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #222;
+  letter-spacing: 0.01em;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 32px;
+}
+
+.footer__link {
+  color: #222;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+}
+
+.footer__link:hover {
+  color: #000;
+}
