@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 
 import "./App.css";
-import { coordinates, APIkey } from "../../utils/constants";
+import {
+  defaultClothingItems,
+  coordinates,
+  APIkey,
+} from "../../utils/constants";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
@@ -16,6 +20,7 @@ function App() {
     temp: { F: 999 },
     city: "",
   });
+  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
 

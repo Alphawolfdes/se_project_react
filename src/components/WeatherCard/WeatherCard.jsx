@@ -8,19 +8,19 @@ function WeatherCard({ weatherData }) {
 
   let weatherOptionUrl = ""; // Make sure this is declared at the top
 
-  const filteredWeatherOption = weatherOptions.filter((option) => {
+  const filteredWeatherOptions = weatherOptions.filter((option) => {
     return (
       option.day === weatherData.isDay &&
       option.condition === weatherData.condition
     );
   });
 
-  if (filteredWeatherOption.length === 0) {
+  if (filteredWeatherOptions.length === 0) {
     const defaultWeatherKey = weatherData.isDay ? "day" : "night";
     const defaultWeatherOption = defaultWeatherOptions[defaultWeatherKey];
     weatherOptionUrl = defaultWeatherOption?.url || "";
   } else {
-    weatherOptionUrl = filteredWeatherOption[0]?.url || "";
+    weatherOptionUrl = filteredWeatherOptions[0]?.url || "";
   }
 
   return (
