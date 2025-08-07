@@ -52,15 +52,14 @@
   display: block;
   width: 100%;
   margin-bottom: 16px;
-  padding: 12px 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 5px 0px;
+  border: none;
+  border-bottom: 1px solid #000;
   font-family: "Cabinet Grotesk", Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
   color: #222;
-  background: #f7f7f7;
 }
 
 .modal__radio-buttons {

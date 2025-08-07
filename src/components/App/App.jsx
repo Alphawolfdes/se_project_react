@@ -44,7 +44,7 @@ function App() {
         setWeatherData(filteredData);
       })
       .catch((error) => {
-        console.error(error);
+        console.error("Failed to fetch weather data:", error);
       });
   }, []);
 
@@ -65,7 +65,7 @@ function App() {
       <ModalWithForm
         buttonText="Add garment"
         title="New garment"
-        activeModal={activeModal}
+        isOpen={activeModal === "add-garment"}
         onClose={closeActiveModal}
       >
         <label htmlFor="name" className="modal__label">
