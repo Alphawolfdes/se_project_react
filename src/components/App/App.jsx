@@ -55,7 +55,11 @@ function App() {
           handleAddButtonClick={handleAddButtonClick}
           weatherData={weatherData}
         />
-        <Main weatherData={weatherData} handleCardClick={handleCardClick} />
+        <Main
+          weatherData={weatherData}
+          handleCardClick={handleCardClick}
+          clothingItems={clothingItems}
+        />
       </div>
       <Footer />
       <ModalWithForm

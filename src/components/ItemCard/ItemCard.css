@@ -17,7 +17,7 @@
   box-shadow: 0 8px 24px rgba(34, 34, 34, 0.18);
 }
 
-.card__name {
+.item-card__name {
   position: absolute;
   top: 16px;
   left: 16px;
@@ -32,7 +32,7 @@
   letter-spacing: 0.01em;
 }
 
-.card__image {
+.item-card__image {
   width: 90%;
   height: 180px;
   object-fit: cover;
