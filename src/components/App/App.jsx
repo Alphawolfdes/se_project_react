@@ -15,6 +15,7 @@ import "../Footer/Footer.css";
 import Footer from "../Footer/Footer";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import Profile from "../Profile/Profile";
+import { getItems, addItem, deleteItem } from "../../utils/api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -43,13 +44,25 @@ function App() {
   };
 
   const onAddItem = (data) => {
-    const newCardData = {
-      name: data.name,
-      link: data.link,
-      weather: data.weatherType,
-    };
-    setClothingItems([...clothingItems, newCardData]);
-    closeActiveModal();
+    addItem(data)
+      .then((newItem) => {
+        setClothingItems([...clothingItems, newItem]);
+        closeActiveModal();
+      })
+      .catch((error) => {
+        console.error("Failed to add item:", error);
+      });
+  };
+
+  const handleDeleteItem = (id) => {
+    deleteItem(id)
+      .then(() => {
+        setClothingItems(clothingItems.filter((item) => item._id !== id));
+        closeActiveModal();
+      })
+      .catch((error) => {
+        console.error("Failed to delete item:", error);
+      });
   };
 
   const closeActiveModal = () => {
@@ -109,11 +122,6 @@ function App() {
               }
             />
           </Routes>
-          <Main
-            weatherData={weatherData}
-            onCardClick={handleCardClick}
-            clothingItems={clothingItems}
-          />
         </div>
         <Footer />
         <AddItemModal
@@ -125,6 +133,7 @@ function App() {
           activeModal={activeModal}
           card={selectedCard}
           onClose={closeActiveModal}
+          onDelete={handleDeleteItem}
         />
       </div>
     </CurrentTemperatureUnitContext.Provider>

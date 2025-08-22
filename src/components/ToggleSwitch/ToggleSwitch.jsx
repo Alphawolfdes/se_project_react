@@ -12,13 +12,14 @@ export default function ToggleSwitch() {
       <input
         type="checkbox"
         className="toggle-switch__checkbox"
+        checked={currentTemperatureUnit === "C"}
         onChange={handleToggleSwitchChange}
       />
       <span className="toggle-switch__slider"></span>
       <span
         className={`toggle-switch__text toggle-switch__text_F ${
           currentTemperatureUnit === "F"
-            ? ".toggle-switch__text_color_white"
+            ? "toggle-switch__text_color_white"
             : ""
         }`}
       >
@@ -27,7 +28,7 @@ export default function ToggleSwitch() {
       <span
         className={`toggle-switch__text toggle-switch__text_C ${
           currentTemperatureUnit === "C"
-            ? ".toggle-switch__text_color_white"
+            ? "toggle-switch__text_color_white"
             : ""
         }`}
       >

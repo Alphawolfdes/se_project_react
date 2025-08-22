@@ -1,8 +1,16 @@
+import { useEffect } from "react";
+
 import { useForm } from "../../../hooks/useForm";
+import { addItem } from "../../utils/api";
 
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
+const AddItemModal = ({
+  isOpen,
+  onCloseModal,
+  setClothingItems,
+  clothingItems,
+}) => {
   const defaultValues = {
     name: "",
     link: "",
@@ -14,8 +22,24 @@ const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onAddItem(values);
-    resetForm();
   };
+
+  const onAddItem = (data) => {
+    addItem(data)
+      .then((newItem) => {
+        setClothingItems([...clothingItems, newItem]);
+        onCloseModal();
+      })
+      .catch((error) => {
+        console.error("Failed to add item:", error);
+      });
+  };
+
+  useEffect(() => {
+    if (!isOpen) {
+      resetForm();
+    }
+  }, [isOpen, resetForm]);
 
   return (
     <ModalWithForm

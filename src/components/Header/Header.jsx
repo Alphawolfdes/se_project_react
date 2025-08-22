@@ -1,14 +1,21 @@
+import React, { useContext } from "react";
 import "./Header.css";
 import logo from "../../assets/logo.svg";
 import avatar from "../../assets/avatar.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 
 function Header({ handleAddButtonClick, weatherData }) {
+  const { currentTemperatureUnit, handleToggleSwitchChange } = useContext(
+    CurrentTemperatureUnitContext
+  );
+
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
   });
+
   return (
     <header className="header">
       <Link to="/">
@@ -17,12 +24,15 @@ function Header({ handleAddButtonClick, weatherData }) {
       <p className="header__date-and-location">
         {currentDate}, {weatherData.city}
       </p>
+      <ToggleSwitch
+        isOn={currentTemperatureUnit === "C"}
+        handleToggle={handleToggleSwitchChange}
+      />
       <button
         onClick={handleAddButtonClick}
         type="button"
         className="header__add-clothes-btn"
       >
-        <ToggleSwitch isOn={false} handleToggle={() => {}} />
         Add Clothes
       </button>
       <Link to="/profile" className="header__link">
