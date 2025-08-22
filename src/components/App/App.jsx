@@ -14,7 +14,7 @@ import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import "../Footer/Footer.css";
 import Footer from "../Footer/Footer";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
-import Profile from "../../../Profile/Profile";
+import Profile from "../Profile/Profile";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -101,7 +101,12 @@ function App() {
             />
             <Route
               path="/profile"
-              element={<Profile onCardClick={handleCardClick} />}
+              element={
+                <Profile
+                  clothingItems={clothingItems}
+                  onCardClick={handleCardClick}
+                />
+              }
             />
           </Routes>
           <Main
