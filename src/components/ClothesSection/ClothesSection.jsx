@@ -1,4 +1,6 @@
 import React from "react";
+import "./ClothesSection.css";
+
 function ClothesSection({ clothingItems, onCardClick }) {
   return (
     <section className="clothes-section">
