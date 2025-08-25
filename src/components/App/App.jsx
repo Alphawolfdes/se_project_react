@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import {
-  defaultClothingItems,
-  coordinates,
-  apiKey,
-} from "../../utils/constants";
+import { coordinates, apiKey } from "../../utils/constants";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import AddItemModal from "../AddItemModal/AddItemModal";
@@ -25,7 +21,7 @@ function App() {
     condition: "",
     isDay: true,
   });
-  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
+  const [clothingItems, setClothingItems] = useState([]); // <-- initialize as empty array
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
@@ -87,7 +83,6 @@ function App() {
       })
       .catch((error) => {
         console.error("Failed to fetch clothing items:", error);
-        setClothingItems(defaultClothingItems); // fallback to defaults
       });
   }, []);
 

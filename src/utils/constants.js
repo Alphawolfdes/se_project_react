@@ -1,3 +1,5 @@
+import { defaultClothingItems } from "../../utils/constants";
+
 export const weatherOptions = [
   {
     day: true,
@@ -77,3 +79,7 @@ export const coordinates = {
 };
 
 export const apiKey = "e0bbf42834184533d41eba2b56b8d84b";
+
+export const defaultClothingItems = [
+  /* ...items... */
+];
