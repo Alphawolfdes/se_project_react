@@ -1,0 +1,55 @@
+.clothes-section__add-btn {
+  margin-bottom: 24px;
+  padding: 8px 24px;
+  font-size: 16px;
+  background: #fff;
+  border: 2px solid #15171c;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #15171c;
+  font-weight: 500;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.clothes-section__add-btn:hover {
+  border-color: #ff4d4f;
+  color: #ff4d4f;
+}
+
+.clothes-section__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.clothes-section__list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(21, 23, 28, 0.08);
+  padding: 16px;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.clothes-section__list li:hover {
+  box-shadow: 0 4px 16px rgba(255, 77, 79, 0.15);
+}
+
+.clothes-section__list img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.clothes-section__list span {
+  font-size: 16px;
+  color: #15171c;
+  text-align: center;
+}

@@ -33,16 +33,29 @@
 }
 
 .modal__close {
-  position: absolute;
-  top: 24px;
-  right: 24px;
   background: none;
   border: none;
   cursor: pointer;
-  width: 32px;
-  height: 32px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
   padding: 0;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__close-icon {
+  width: 20px;
+  height: 20px;
+  stroke: #15171c;
+  transition: stroke 0.2s;
+  display: block;
+}
+
+.modal__close:hover .modal__close-icon {
+  stroke: #ff4d4f;
 }
 
 .modal__image {
@@ -77,4 +90,24 @@
   color: #666;
   margin: 0;
   letter-spacing: 0.01em;
+}
+
+.modal__delete {
+  position: absolute;
+  top: 20px;
+  right: 56px; /* space between close and delete */
+  background: none;
+  border: none;
+  color: #ff4d4f;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0 8px;
+  transition: color 0.2s;
+  z-index: 2;
+}
+
+.modal__delete:hover {
+  color: #d9363e;
+  text-decoration: underline;
 }

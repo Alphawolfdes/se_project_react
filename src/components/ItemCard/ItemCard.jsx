@@ -6,10 +6,17 @@ function ItemCard({ item, onCardClick }) {
   };
 
   return (
-    <li className="card" onClick={handleCardClick}>
-      <h2 className="item-card__name">{item.name}</h2>
-      <img className="item-card__image" src={item.link} alt={item.name} />
+    <li className="item-card" onClick={handleCardClick}>
+      <div className="item-card__image-wrapper">
+        <img
+          className="item-card__image"
+          src={item.imageUrl || item.link}
+          alt={item.name}
+        />
+      </div>
+      <span className="item-card__name">{item.name}</span>
     </li>
   );
 }
+
 export default ItemCard;
