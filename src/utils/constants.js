@@ -1,5 +1,3 @@
-import { defaultClothingItems } from "../../utils/constants";
-
 export const weatherOptions = [
   {
     day: true,

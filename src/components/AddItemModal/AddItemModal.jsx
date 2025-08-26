@@ -5,18 +5,18 @@ import { addItem } from "../../utils/api";
 
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
+const defaultValues = {
+  name: "",
+  link: "",
+  weatherType: "",
+};
+
 const AddItemModal = ({
   isOpen,
   onCloseModal,
   setClothingItems,
   clothingItems,
 }) => {
-  const defaultValues = {
-    name: "",
-    link: "",
-    weatherType: "",
-  };
-
   const { values, handleChange, resetForm } = useForm(defaultValues);
 
   const handleSubmit = (event) => {
