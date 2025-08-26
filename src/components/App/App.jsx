@@ -12,7 +12,6 @@ import Footer from "../Footer/Footer";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import Profile from "../Profile/Profile";
 import { getItems, addItem, deleteItem } from "../../utils/api";
-import { addItem } from "../../utils/api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
