@@ -14,7 +14,11 @@ const AddItemModal = ({ isOpen, onCloseModal, onAddItem }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onAddItem(values);
+    onAddItem({
+      name: values.name,
+      link: values.link,
+      weather: values.weatherType, // Reassign weatherType to weather
+    });
   };
 
   useEffect(() => {

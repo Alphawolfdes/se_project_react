@@ -23,8 +23,8 @@
 }
 
 .modal__radio-input:checked + .modal__custom-radio {
-  border-color: #ff4d4f;
-  background: #ff4d4f;
+  border-color: black;
+  background: black;
 }
 
 .modal__radio-input:checked + .modal__custom-radio::after {

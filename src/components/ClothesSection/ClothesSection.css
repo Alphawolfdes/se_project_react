@@ -1,19 +1,29 @@
 .clothes-section__add-btn {
-  margin-bottom: 24px;
-  padding: 8px 24px;
-  font-size: 16px;
-  background: #fff;
-  border: 2px solid #15171c;
+  width: 88px;
+  height: 25px;
+  background: #00000099;
+  opacity: 1;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #fff;
+  border: none;
   border-radius: 8px;
   cursor: pointer;
-  color: #15171c;
-  font-weight: 500;
-  transition: border-color 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  margin-bottom: 24px;
+  /* Remove previous border and color styles */
 }
 
 .clothes-section__add-btn:hover {
-  border-color: #ff4d4f;
-  color: #ff4d4f;
+  background: #15171c;
+  color: #fff;
 }
 
 .clothes-section__list {
@@ -23,4 +33,31 @@
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+/* Add to ClothesSection.css for header layout */
+.clothes-section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.clothes-section__title {
+  width: 94px;
+  height: 25px;
+  background: #000000;
+  opacity: 1;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }

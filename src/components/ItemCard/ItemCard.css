@@ -27,9 +27,8 @@
   padding: 16px;
   cursor: pointer;
   transition: box-shadow 0.2s;
-  min-width: 140px;
-  min-height: 180px;
-  max-width: 180px;
+  min-width: 325px; /* Increased min-width to match Figma */
+  min-height: 328px; /* Increased min-height for better proportions */
   box-sizing: border-box;
 }
 
