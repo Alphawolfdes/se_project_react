@@ -119,7 +119,7 @@ function App() {
             />
           </Routes>
         </div>
-        <Footer />
+
         <AddItemModal
           isOpen={activeModal === "add-garment"}
           onAddItem={onAddItem}
@@ -131,6 +131,7 @@ function App() {
           onClose={closeActiveModal}
           onDelete={handleDeleteItem}
         />
+        <Footer />
       </div>
     </CurrentTemperatureUnitContext.Provider>
   );

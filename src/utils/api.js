@@ -1,7 +1,10 @@
 const baseUrl = "http://localhost:3001";
 
-function checkResponse(res) {
-  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+export function checkResponse(response) {
+  if (response.ok) {
+    return response.json();
+  }
+  return Promise.reject(`Error: ${response.status}`);
 }
 
 function request(url, options) {
@@ -9,7 +12,7 @@ function request(url, options) {
 }
 
 function getItems() {
-  return request(`${baseUrl}/items`);
+  return fetch(`${baseUrl}/items`).then(checkResponse);
 }
 
 function addItem(item) {

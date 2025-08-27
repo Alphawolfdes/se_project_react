@@ -4,6 +4,15 @@
   padding: 40px 24px;
 }
 
+.profile__layout {
+  display: flex;
+  gap: 32px;
+}
+
+.profile__main {
+  flex: 1;
+}
+
 .profile__header {
   display: flex;
   align-items: center;
