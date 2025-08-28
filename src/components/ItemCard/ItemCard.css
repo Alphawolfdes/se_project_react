@@ -1,5 +1,6 @@
 .card {
-  width: 323px;
+  width: 325px;
+  height: 328px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -20,16 +21,17 @@
 .item-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(21, 23, 28, 0.08);
-  padding: 16px;
+  padding: 0;
   cursor: pointer;
   transition: box-shadow 0.2s;
-  min-width: 325px; /* Increased min-width to match Figma */
-  min-height: 328px; /* Increased min-height for better proportions */
+  width: 325px;
+  height: 328px;
   box-sizing: border-box;
+  position: relative;
 }
 
 .item-card:hover {
@@ -37,30 +39,46 @@
 }
 
 .item-card__image-wrapper {
-  width: 80px;
-  height: 80px;
+  width: 100%;
+  height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12px;
+  align-items: stretch;
+  justify-content: stretch;
+  position: relative;
   background: #f7f7fa;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
+  padding: 0;
 }
 
 .item-card__image {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
 }
 
 .item-card__name {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 24px;
+  border-radius: 12px;
+  padding: 2px 12px;
+  gap: 8px;
   font-size: 16px;
   color: #15171c;
   text-align: center;
-  margin-top: 8px;
   font-weight: 500;
   line-height: 1.2;
   word-break: break-word;
+  background: #fff;
+  opacity: 0.95;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(21, 23, 28, 0.08);
 }

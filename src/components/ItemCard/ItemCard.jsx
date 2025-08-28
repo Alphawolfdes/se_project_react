@@ -7,6 +7,7 @@ function ItemCard({ item, onCardClick }) {
 
   return (
     <li className="item-card" onClick={handleCardClick}>
+      <span className="item-card__name">{item.name}</span>
       <div className="item-card__image-wrapper">
         <img
           className="item-card__image"
@@ -14,7 +15,6 @@ function ItemCard({ item, onCardClick }) {
           alt={item.name}
         />
       </div>
-      <span className="item-card__name">{item.name}</span>
     </li>
   );
 }

@@ -30,11 +30,3 @@
   margin: 12px 0 8px 0;
   text-align: center;
 }
-
-.item-card img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  border-radius: 8px;
-  background: #f3f3f3;
-}
