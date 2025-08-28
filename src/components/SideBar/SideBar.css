@@ -18,9 +18,12 @@
 .sidebar__avatar {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  background: #e6e6e6;
+  width: 56;
+  height: 56;
+  top: 119px;
+  left: 40px;
+  opacity: 1;
+  border-width: 1px;
 }
 
 .sidebar__username {
@@ -30,4 +33,9 @@
   line-height: 24px;
   color: #15171c;
   margin: 0;
+  width: 157;
+  height: 25;
+  top: 135px;
+  left: 112px;
+  opacity: 1;
 }
