@@ -15,20 +15,63 @@ function getItems() {
   return fetch(`${baseUrl}/items`).then(checkResponse);
 }
 
-function addItem(item) {
+function addItem(item, token) {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+
+  if (token) {
+    headers.authorization = `Bearer ${token}`;
+  }
+
   return request(`${baseUrl}/items`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers,
     body: JSON.stringify(item),
   });
 }
 
-function deleteItem(id) {
+function deleteItem(id, token) {
+  const headers = {};
+
+  if (token) {
+    headers.authorization = `Bearer ${token}`;
+  }
+
   return request(`${baseUrl}/items/${id}`, {
     method: "DELETE",
+    headers,
   });
 }
 
-export { getItems, addItem, deleteItem };
+function addCardLike(id, token) {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+
+  if (token) {
+    headers.authorization = `Bearer ${token}`;
+  }
+
+  return request(`${baseUrl}/items/${id}/likes`, {
+    method: "PUT",
+    headers,
+  });
+}
+
+function removeCardLike(id, token) {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+
+  if (token) {
+    headers.authorization = `Bearer ${token}`;
+  }
+
+  return request(`${baseUrl}/items/${id}/likes`, {
+    method: "DELETE",
+    headers,
+  });
+}
+
+export { getItems, addItem, deleteItem, addCardLike, removeCardLike };

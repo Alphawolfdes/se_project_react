@@ -123,3 +123,7 @@
   color: #d9363e;
   text-decoration: underline;
 }
+
+.modal__delete_hidden {
+  display: none;
+}

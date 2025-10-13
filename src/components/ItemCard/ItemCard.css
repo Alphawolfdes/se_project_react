@@ -58,16 +58,21 @@
   display: block;
 }
 
-.item-card__name {
+.item-card__header {
   position: absolute;
   top: 16px;
   left: 50%;
   transform: translateX(-50%);
-  width: 72px;
-  height: 24px;
+  width: calc(100% - 32px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.item-card__name {
   border-radius: 12px;
   padding: 2px 12px;
-  gap: 8px;
   font-size: 16px;
   color: #15171c;
   text-align: center;
@@ -79,6 +84,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2;
   box-shadow: 0 2px 8px rgba(21, 23, 28, 0.08);
+  min-width: 72px;
+  height: 24px;
+}
+
+.item-card__like-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: #ccc;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 2px 8px rgba(21, 23, 28, 0.08);
+}
+
+.item-card__like-button:hover {
+  background: rgba(255, 255, 255, 1);
+  color: #ff4d4f;
+}
+
+.item-card__like-button_active {
+  color: #ff4d4f;
+}
+
+.item-card__like-button_active:hover {
+  color: #d9363e;
 }

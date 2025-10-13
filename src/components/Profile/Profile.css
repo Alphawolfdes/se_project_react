@@ -7,6 +7,7 @@
 .profile__layout {
   display: flex;
   gap: 32px;
+  align-items: flex-start;
 }
 
 .profile__main {
