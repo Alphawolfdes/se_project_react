@@ -105,6 +105,7 @@ function App() {
     setToken(null);
     setCurrentUser(null);
     setIsLoggedIn(false);
+    closeActiveModal();
   };
 
   const handleEditProfileModal = () => {

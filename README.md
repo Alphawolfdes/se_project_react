@@ -4,6 +4,11 @@
 
 WTWR is a weather-based clothing recommendation app. It fetches real-time weather data and suggests clothing items based on the current conditions. Users can preview clothing items, add new garments, and view weather details for their location.
 
+# Backend Repository
+
+The backend for this project can be found at: [Backend Repository]
+https://github.com/Alphawolfdes/se_project_express
+
 ## Technologies Used
 
 - React
@@ -27,7 +32,7 @@ WTWR is a weather-based clothing recommendation app. It fetches real-time weathe
 
 ## Demo
 
-[Deployed App Link](https://your-deployment-url.com)
+[Deployed App Link] (https://github.com/Alphawolfdes/se_project_express)
 
 ## Features
 
