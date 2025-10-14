@@ -1,4 +1,4 @@
-.Footer {
+.footer {
   width: 100%;
   padding: 32px 40px;
   background: #f7f7f7;
@@ -13,7 +13,7 @@
   box-sizing: border-box;
 }
 
-.Footer__name {
+.footer__name {
   margin: 0;
   font-size: 16px;
   font-weight: 400;
@@ -21,7 +21,7 @@
   letter-spacing: 0.01em;
 }
 
-.Footer__copyright {
+.footer__copyright {
   margin: 0;
   font-size: 16px;
   font-weight: 400;
@@ -29,12 +29,12 @@
   letter-spacing: 0.01em;
 }
 
-.Footer__nav {
+.footer__nav {
   display: flex;
   gap: 32px;
 }
 
-.Footer__link {
+.footer__link {
   color: #222;
   text-decoration: none;
   font-size: 16px;
@@ -43,6 +43,6 @@
   transition: color 0.2s;
 }
 
-.Footer__link:hover {
+.footer__link:hover {
   color: #000;
 }
