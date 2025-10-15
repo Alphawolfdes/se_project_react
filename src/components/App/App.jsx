@@ -125,7 +125,7 @@ function App() {
   const onAddItem = (data) => {
     addItem(data, token)
       .then((newItem) => {
-        setClothingItems((prevItems) => [newItem, ...prevItems]);
+        setClothingItems((prevItems) => [newItem.data, ...prevItems]);
         closeActiveModal();
       })
       .catch((error) => {
@@ -206,6 +206,18 @@ function App() {
     }
   }, [token]);
 
+  // Add Escape key listener to close modals
+  useEffect(() => {
+    const closeByEscape = (e) => {
+      if (e.key === "Escape") {
+        closeActiveModal();
+      }
+    };
+    document.addEventListener("keydown", closeByEscape);
+
+    return () => document.removeEventListener("keydown", closeByEscape);
+  }, []);
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <CurrentTemperatureUnitContext.Provider
@@ -266,11 +278,13 @@ function App() {
             isOpen={activeModal === "register"}
             onRegister={handleRegister}
             onCloseModal={closeActiveModal}
+            onLoginModal={handleLoginModal}
           />
           <LoginModal
             isOpen={activeModal === "login"}
             onLogin={handleLogin}
             onCloseModal={closeActiveModal}
+            onRegisterModal={handleRegisterModal}
           />
           <EditProfileModal
             isOpen={activeModal === "edit-profile"}

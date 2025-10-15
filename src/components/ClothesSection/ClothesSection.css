@@ -1,5 +1,4 @@
 .clothes-section__add-btn {
-  width: 88px;
   height: 25px;
   background: #00000099;
   opacity: 1;
@@ -28,18 +27,12 @@
 }
 
 .clothes-section__list {
-  width: 1015px;
-  height: 676px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   padding: 0;
   margin: 0 auto;
   list-style: none;
-  position: relative;
-  top: 176px;
-  left: 385px;
-  opacity: 1;
 }
 
 /* Add to ClothesSection.css for header layout */
@@ -51,7 +44,6 @@
 }
 
 .clothes-section__title {
-  width: 94px;
   height: 25px;
   background: #000000;
   opacity: 1;

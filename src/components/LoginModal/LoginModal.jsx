@@ -8,7 +8,7 @@ const defaultValues = {
   password: "",
 };
 
-const LoginModal = ({ isOpen, onCloseModal, onLogin }) => {
+const LoginModal = ({ isOpen, onCloseModal, onLogin, onRegisterModal }) => {
   const { values, handleChange, resetForm } = useForm(defaultValues);
 
   const handleSubmit = (event) => {
@@ -17,6 +17,11 @@ const LoginModal = ({ isOpen, onCloseModal, onLogin }) => {
       email: values.email,
       password: values.password,
     });
+  };
+
+  const handleSwitchToRegister = () => {
+    onCloseModal();
+    onRegisterModal();
   };
 
   useEffect(() => {
@@ -32,6 +37,8 @@ const LoginModal = ({ isOpen, onCloseModal, onLogin }) => {
       isOpen={isOpen}
       onClose={onCloseModal}
       onSubmit={handleSubmit}
+      redirectText="or Sign Up"
+      onRedirect={handleSwitchToRegister}
     >
       <label className="modal__label">
         Email

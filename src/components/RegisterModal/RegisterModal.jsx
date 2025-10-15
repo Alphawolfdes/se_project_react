@@ -10,7 +10,7 @@ const defaultValues = {
   password: "",
 };
 
-const RegisterModal = ({ isOpen, onCloseModal, onRegister }) => {
+const RegisterModal = ({ isOpen, onCloseModal, onRegister, onLoginModal }) => {
   const { values, handleChange, resetForm } = useForm(defaultValues);
 
   const handleSubmit = (event) => {
@@ -21,6 +21,11 @@ const RegisterModal = ({ isOpen, onCloseModal, onRegister }) => {
       email: values.email,
       password: values.password,
     });
+  };
+
+  const handleSwitchToLogin = () => {
+    onCloseModal();
+    onLoginModal();
   };
 
   useEffect(() => {
@@ -36,6 +41,8 @@ const RegisterModal = ({ isOpen, onCloseModal, onRegister }) => {
       isOpen={isOpen}
       onClose={onCloseModal}
       onSubmit={handleSubmit}
+      redirectText="or Log In"
+      onRedirect={handleSwitchToLogin}
     >
       <label className="modal__label">
         Name

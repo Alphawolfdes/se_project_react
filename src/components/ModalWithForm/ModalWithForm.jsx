@@ -8,6 +8,8 @@ function ModalWithForm({
   onClose,
   name,
   onSubmit,
+  redirectText,
+  onRedirect,
 }) {
   return (
     <div
@@ -49,9 +51,20 @@ function ModalWithForm({
         </button>
         <form className="modal__form" name={name} onSubmit={onSubmit}>
           {children}
-          <button type="submit" className="modal__button">
-            {buttonText}
-          </button>
+          <div className="modal__buttons">
+            <button type="submit" className="modal__button">
+              {buttonText}
+            </button>
+            {redirectText && (
+              <button
+                type="button"
+                className="modal__redirect-button"
+                onClick={onRedirect}
+              >
+                {redirectText}
+              </button>
+            )}
+          </div>
         </form>
       </div>
     </div>

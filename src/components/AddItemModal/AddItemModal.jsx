@@ -16,7 +16,7 @@ const AddItemModal = ({ isOpen, onCloseModal, onAddItem }) => {
     event.preventDefault();
     onAddItem({
       name: values.name,
-      link: values.link,
+      imageUrl: values.link,
       weather: values.weatherType, // Reassign weatherType to weather
     });
   };

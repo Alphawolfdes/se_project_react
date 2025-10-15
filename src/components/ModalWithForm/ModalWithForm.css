@@ -100,6 +100,12 @@
   display: block;
 }
 
+.modal__buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
 .modal__button {
   font-family: "Cabinet Grotesk", Arial, sans-serif;
   font-size: 18px;
@@ -111,10 +117,30 @@
   border-radius: 8px;
   padding: 14px 0;
   cursor: pointer;
-  margin-top: 16px;
   transition: background 0.2s;
+  flex: 1;
 }
 
 .modal__button:hover {
   background: #222;
+}
+
+.modal__redirect-button {
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #000;
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 14px 0;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  flex: 1;
+}
+
+.modal__redirect-button:hover {
+  background: #000;
+  color: #fff;
 }
